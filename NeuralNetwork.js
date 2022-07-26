@@ -38,10 +38,10 @@ const draw = () => {
             ctx.font = "30px Arial";
             ctx.fillText("Steps: " + steps, 10, 30);
         }
-        if((green - red) < 100){
+        if((green - red) < points.length){
             steps++
         }
-        if((green - red) >= 100){
+        if((green - red) >= points.length){
             console.log(p.weights)
             stop = true;
         }
