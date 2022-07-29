@@ -7,9 +7,65 @@
     <title>Neural Network</title>
     <script type="text/javascript" src="Perceptron.js"></script>
     <script type="text/javascript" src="Training.js"></script>
+    <link rel="stylesheet" href="./global.css">
+    <style>
+        .slidecontainer {
+          width: 100%;
+        }
+        
+        .slider {
+          -webkit-appearance: none;
+          width: 100%;
+          height: 15px;
+          border-radius: 5px;
+          background: #d3d3d3;
+          outline: none;
+          opacity: 0.7;
+          -webkit-transition: .2s;
+          transition: opacity .2s;
+        }
+        
+        .slider:hover {
+          opacity: 1;
+        }
+        
+        .slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          background: black;
+          cursor: pointer;
+        }
+        
+        .slider::-moz-range-thumb {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          background: black;
+          cursor: pointer;
+        }
+        </style>
 </head>
 <body>
-    <canvas id="canvas" style="border: 1px solid black"></canvas>
+    <div style="float: left; padding: 1rem; width: 33%;">
+        <label>Num. of Dots:</label>
+        <input type="text" id="numOfDots" value="" placeholder="100" /> <br><br>
+        <label>Weight 1:</label>
+        <input type="text" id="weight1" value="" placeholder="65.123456789" /> <br><br>
+        <label>Weight 2:</label>
+        <input type="text" id="weight2" value="" placeholder="-65.123456789" /> <br><br>
+        <label>Step Speed (1-144):</label>
+        <input type="range" id="stepSpeed" min="1" max="144" class="slider" step="1" value="144"> <br><br>
+        <h3><span id="w1B">Weight 1 (before): 0</span> | <span id="w1A">Weight 1 (after): 0</span></h3>
+        <h3><span id="w2B">Weight 2 (before): 0</span> | <span id="w2A">Weight 2 (after): 0</span></h3>
+        <button onclick="reset()">Reset</button> <button onclick="start()">Start</button> 
+    </div>
+    <div style="display: inline-block;">
+        <h1><span id="steps">Steps: 0</span></h1>
+        <canvas id="canvas" style="border: 1px solid black"></canvas>
+    </div>
     <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="NeuralNetwork.js"></script>
 </body>

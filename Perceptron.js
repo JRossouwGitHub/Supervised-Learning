@@ -1,14 +1,10 @@
 class Perceptron{
     
-    constructor() { 
+    constructor(_weights) { 
         this.max = 1
         this.min = -1
         this.learningRate = 0.01
-        this.weights = new Array(2);
-        //Initialize weights randomly
-        for(let i = 0; i < this.weights.length; i++){
-            this.weights[i] = (Math.random() * (this.max - this.min) + this.min)
-        }
+        this.weights = _weights;
     }
 
     guess(inputs){
